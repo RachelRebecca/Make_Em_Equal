@@ -6,20 +6,221 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:id="@+id/include_content_main">
 
+    <LinearLayout
+        android:id="@+id/question_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/answer_row"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/num1a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num1b"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/space1"
+            android:text="@string/space">
+        </TextView>
+
+        <TextView
+            android:id="@+id/num1b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/num2a"
+            app:layout_constraintStart_toEndOf="@+id/num1a"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <TextView
+            android:id="@+id/num2a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num2b"
+            app:layout_constraintStart_toEndOf="@id/num1b"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/space2"
+            android:text="@string/space">
+        </TextView>
+
+        <TextView
+            android:id="@+id/num2b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num2a"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/num1a"
+        android:id="@+id/content_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/space"
+        android:text="@string/make_equal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="25dp"
-        android:layout_marginLeft="25dp">
+        app:layout_constraintTop_toTopOf="parent">
+
     </TextView>
+    <LinearLayout
+        android:id="@+id/answer_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question_row">
 
 
+        <TextView
+            android:id="@+id/answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:text="@string/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num1b"
+            app:layout_constraintStart_toStartOf="@+id/num1a"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <TextView
+            android:id="@+id/answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:text="@string/space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num2b"
+            app:layout_constraintStart_toStartOf="@+id/num2a"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/buttons1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/question_row"
+        app:layout_constraintStart_toStartOf="@+id/question_row">
+
+        <Button
+            android:id="@+id/button_one_1"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator1"
+            android:text="@string/plus" />
+
+        <Button
+            android:id="@+id/button_two_1"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator1"
+            android:text="@string/minus" />
+
+        <Button
+            android:id="@+id/button_three_1"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator1"
+            android:text="@string/times" />
+
+        <Button
+            android:id="@+id/button_four_1"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator1"
+            android:text="@string/divide" />
+        <Button
+            android:id="@+id/button_five_1"
+            style="@style/BorderlessOperators"
+            android:text="@string/reset"
+            android:onClick="selectOperator1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/answer_row"
+        app:layout_constraintEnd_toEndOf="@+id/question_row"
+        app:layout_constraintStart_toEndOf="@+id/question_row"
+        app:layout_constraintTop_toBottomOf="@+id/question_row">
+
+        <Button
+            android:id="@+id/button_one_2"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator2"
+            android:text="@string/plus" />
+
+        <Button
+            android:id="@+id/button_two_2"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator2"
+            android:text="@string/minus" />
+
+        <Button
+            android:id="@+id/button_three_2"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator2"
+            android:text="@string/times" />
+
+        <Button
+            android:id="@+id/button_four_2"
+            style="@style/BorderlessOperators"
+            android:onClick="selectOperator2"
+            android:text="@string/divide" />
+
+        <Button
+            android:id="@+id/button_five_2"
+            style="@style/BorderlessOperators"
+            android:text="@string/reset"
+            android:onClick="selectOperator2"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
