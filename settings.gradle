@@ -1,0 +1,2 @@
+rootProject.name = "Make 'Em Equal"
+include ':app'
