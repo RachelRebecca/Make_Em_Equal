@@ -1,5 +1,7 @@
 package com.example.make_em_equal;
 
+import com.google.gson.Gson;
+
 import java.util.Random;
 
 public class LineChooser {
@@ -42,4 +44,35 @@ public class LineChooser {
     public double getAnswer(){
         return answerList[getLineChoice()];
     }
+
+
+
+    //code came from 13 Stones App
+    /**
+     * Reverses the game object's serialization as a String
+     * back to a game object
+     *
+     * @param json The serialized String of the game object
+     * @return The game object
+     */
+    public static LineChooser getGameFromJSON(String json) {
+        Gson gson = new Gson();
+        return gson.fromJson(json, LineChooser.class);
+    }
+
+    /**
+     * Serializes the game object to a JSON-formatted String
+     *
+     * @param obj Game Object to serialize
+     * @return JSON-formatted String
+     */
+    public static String getJSONFromGame(LineChooser obj) {
+        Gson gson = new Gson();
+        return gson.toJson(obj);
+    }
+
+    public String getJSONFromCurrentGame() {
+        return getJSONFromGame(this);
+    }
 }
+

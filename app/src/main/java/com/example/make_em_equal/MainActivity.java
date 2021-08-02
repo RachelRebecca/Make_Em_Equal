@@ -36,18 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContent();
         setSupportActionBar(binding.toolbar);
         setupFAB();
-
-        contentMessage = binding.includeContentMain.contentMessage;
-        num1a = binding.includeContentMain.num1a;
-        space1 = binding.includeContentMain.space1;
-        num1b = binding.includeContentMain.num1b;
-        num2a = binding.includeContentMain.num2a;
-        space2 = binding.includeContentMain.space2;
-        num2b = binding.includeContentMain.num2b;
-        answer1 = binding.includeContentMain.answer1;
-        answer2 = binding.includeContentMain.answer2;
-        //answer = binding.includeContentMain.answer;
-
         startNewGame();
     }
 
@@ -61,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         num2a.setText(num2aString);
         String num2bString = String.valueOf(lineChooser.getNum2B());
         num2b.setText(num2bString);
-        String answer1String = String.valueOf(lineChooser.getNum1A() + " " + lineChooser.getNum1B());
+        String answer1String = (lineChooser.getNum1A()) + String.valueOf(lineChooser.getNum1B());
         answer1.setText(answer1String);
         //getNum2a has the 0 for 07 if you want to remove do it in an if statement.
-        String answer2String = String.valueOf(lineChooser.getNum2A() + " " + lineChooser.getNum2B());
+        String answer2String = (lineChooser.getNum2A()) + String.valueOf(lineChooser.getNum2B());
         answer2.setText(answer2String);
         //String hintString = String.valueOf(lineChooser.getAnswer());
         //answer.setText(hintString);
@@ -74,6 +62,17 @@ public class MainActivity extends AppCompatActivity {
     {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        contentMessage = binding.includeContentMain.contentMessage;
+        num1a = binding.includeContentMain.num1a;
+        space1 = binding.includeContentMain.space1;
+        num1b = binding.includeContentMain.num1b;
+        num2a = binding.includeContentMain.num2a;
+        space2 = binding.includeContentMain.space2;
+        num2b = binding.includeContentMain.num2b;
+        answer1 = binding.includeContentMain.answer1;
+        answer2 = binding.includeContentMain.answer2;
+        //answer = binding.includeContentMain.answer;
     }
 
     private void setupFAB()
@@ -126,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "_": case " ": case "reset":
                 space1.setText(R.string.space);
-                String answer1Text = num1a.getText().toString() + " " + num1b.getText().toString();
+                String answer1Text = num1a.getText().toString() + num1b.getText().toString();
                 answer1.setText(answer1Text);
                 break;
         }
@@ -152,9 +151,9 @@ public class MainActivity extends AppCompatActivity {
                 answer2.setText(String.valueOf(lineChooser.getNum2A() / lineChooser.getNum2B()));
                 break;
             case "_": case " ": case "reset":
-                space1.setText(R.string.space);
-                String answer1Text = num1a.getText().toString() + " " + num1b.getText().toString();
-                answer1.setText(answer1Text);
+                space2.setText(R.string.space);
+                String answer2Text = num2a.getText().toString() + num2b.getText().toString();
+                answer2.setText(answer2Text);
                 break;
 
         }
