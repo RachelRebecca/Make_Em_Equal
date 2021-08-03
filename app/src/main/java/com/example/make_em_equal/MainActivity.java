@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
     private TextView num2b;
     private TextView answer1;
     private TextView answer2;
-    private TextView answerHint;
+    private double answerHint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,6 +44,36 @@ public class MainActivity extends AppCompatActivity
         setupFAB();
         startNewGame();
     }
+
+    private void setContent()
+    {
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        contentMessage = binding.includeContentMain.contentMessage;
+        num1a = binding.includeContentMain.num1a;
+        space1 = binding.includeContentMain.space1;
+        num1b = binding.includeContentMain.num1b;
+        num2a = binding.includeContentMain.num2a;
+        space2 = binding.includeContentMain.space2;
+        num2b = binding.includeContentMain.num2b;
+        answer1 = binding.includeContentMain.answer1;
+        answer2 = binding.includeContentMain.answer2;
+    }
+
+    private void setupFAB()
+    {
+        binding.fab.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "HINT: Try to make them equal to " + answerHint, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+    }
+
+
 
     private void startNewGame()
     {
@@ -61,39 +91,9 @@ public class MainActivity extends AppCompatActivity
         //getNum2a has the 0 for 07 if you want to remove do it in an if statement.
         String answer2String = (lineChooser.getNum2A()) + String.valueOf(lineChooser.getNum2B());
         answer2.setText(answer2String);
-        //String hintString = String.valueOf(lineChooser.getAnswer());
-        //answer.setText(hintString);
+        answerHint = lineChooser.getAnswer();
         space1.setText(R.string.space);
         space2.setText(R.string.space);
-    }
-
-    private void setContent()
-    {
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        contentMessage = binding.includeContentMain.contentMessage;
-        num1a = binding.includeContentMain.num1a;
-        space1 = binding.includeContentMain.space1;
-        num1b = binding.includeContentMain.num1b;
-        num2a = binding.includeContentMain.num2a;
-        space2 = binding.includeContentMain.space2;
-        num2b = binding.includeContentMain.num2b;
-        answer1 = binding.includeContentMain.answer1;
-        answer2 = binding.includeContentMain.answer2;
-        //answer = binding.includeContentMain.answer;
-    }
-
-    private void setupFAB()
-    {
-        binding.fab.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     public void selectOperator1(View view)
