@@ -73,27 +73,43 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-
-
     private void startNewGame()
     {
+        //create new LineChooser object
         lineChooser = new LineChooser();
+
+        //set question row
         String num1aString = String.valueOf(lineChooser.getNum1A());
         num1a.setText(num1aString);
+        space1.setText(R.string.space);
         String num1bString = String.valueOf(lineChooser.getNum1B());
         num1b.setText(num1bString);
         String num2aString = String.valueOf(lineChooser.getNum2A());
         num2a.setText(num2aString);
+        space2.setText(R.string.space);
         String num2bString = String.valueOf(lineChooser.getNum2B());
         num2b.setText(num2bString);
-        String answer1String = (lineChooser.getNum1A()) + String.valueOf(lineChooser.getNum1B());
-        answer1.setText(answer1String);
-        //getNum2a has the 0 for 07 if you want to remove do it in an if statement.
-        String answer2String = (lineChooser.getNum2A()) + String.valueOf(lineChooser.getNum2B());
-        answer2.setText(answer2String);
+
+        //set answer row
+        if (lineChooser.getNum1A() == 0){
+            answer2.setText(String.valueOf(lineChooser.getNum1B()));
+        }
+        else
+        {
+            String answer1String = (lineChooser.getNum1A()) + String.valueOf(lineChooser.getNum1B());
+            answer1.setText(answer1String);
+        }
+        if (lineChooser.getNum2A() == 0){
+            answer2.setText(String.valueOf(lineChooser.getNum2B()));
+        }
+        else
+        {
+            String answer2String = (lineChooser.getNum2A()) + String.valueOf(lineChooser.getNum2B());
+            answer2.setText(answer2String);
+        }
+
+        //set up hint value
         answerHint = lineChooser.getAnswer();
-        space1.setText(R.string.space);
-        space2.setText(R.string.space);
     }
 
     public void selectOperator1(View view)
