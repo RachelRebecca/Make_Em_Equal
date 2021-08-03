@@ -1,5 +1,9 @@
 package com.example.make_em_equal;
 
+import android.content.DialogInterface;
+import static com.example.make_em_equal.Utils.showYesNoDialog;
+import static com.example.make_em_equal.Utils.showInfoDialog;
+
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -15,7 +19,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
     private ActivityMainBinding binding;
     private LineChooser lineChooser;
@@ -31,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView answerHint;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContent();
         setSupportActionBar(binding.toolbar);
@@ -39,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         startNewGame();
     }
 
-    private void startNewGame() {
+    private void startNewGame()
+    {
         lineChooser = new LineChooser();
         String num1aString = String.valueOf(lineChooser.getNum1A());
         num1a.setText(num1aString);
@@ -56,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         answer2.setText(answer2String);
         //String hintString = String.valueOf(lineChooser.getAnswer());
         //answer.setText(hintString);
+        space1.setText(R.string.space);
+        space2.setText(R.string.space);
     }
 
     private void setContent()
@@ -77,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupFAB()
     {
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        binding.fab.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -86,31 +96,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void selectOperator1(View view) {
+    public void selectOperator1(View view)
+    {
         space1.setText(((Button) view).getText().toString());
-        switch (((Button) view).getText().toString()){
+        switch (((Button) view).getText().toString())
+        {
             case "+":
                 answer1.setText(String.valueOf(lineChooser.getNum1A() + lineChooser.getNum1B()));
                 break;
@@ -130,11 +120,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        if (isEqual()){
-            contentMessage.setText(R.string.great_job);
-        }
+        setEqualBoard();
     }
-    public void selectOperator2(View view) {
+    public void selectOperator2(View view)
+    {
         space2.setText(((Button) view).getText().toString());
         switch (((Button) view).getText().toString()) {
             case "+":
@@ -143,8 +132,7 @@ public class MainActivity extends AppCompatActivity {
             case "-":
                 answer2.setText(String.valueOf(lineChooser.getNum2A() - lineChooser.getNum2B()));
                 break;
-            case "x":
-            case "X":
+            case "x": case "X": case "*":
                 answer2.setText(String.valueOf(lineChooser.getNum2A() * lineChooser.getNum2B()));
                 break;
             case "/":
@@ -157,16 +145,85 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-       if (isEqual()){
-           contentMessage.setText(R.string.great_job);
-       }
+        setEqualBoard();
     }
 
-    public boolean isEqual(){
+    private void setEqualBoard() {
+        if (isEqual())
+        {
+            contentMessage.setText(R.string.great_job);
+            showGameOverDialog();
+        }
+        else
+        {
+            contentMessage.setText(R.string.make_equal);
+        }
+    }
+
+    public boolean isEqual()
+    {
         boolean isEqual = false;
-        if (answer1.getText().toString().equals(answer2.getText().toString())){
+        if (answer1.getText().toString().equals(answer2.getText().toString()))
+        {
             isEqual = true;
         }
         return isEqual;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.start_new_game)
+        {
+            startNewGame();
+            return true;
+        }
+        else if (id == R.id.action_settings)
+        {
+            return true;
+        }
+        else if (id == R.id.about)
+        {
+            openAboutDialog();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //Comes from PM starter code
+    /**
+     * Shows an Android (nicer) equivalent to JOptionPane
+     *
+     */
+    private void showGameOverDialog() {
+        final DialogInterface.OnClickListener newGameListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startNewGame();
+            }
+        };
+        showYesNoDialog(this, "You won!", "Congratulations! You won the game! Play again?", newGameListener, null);
+    }
+
+    private void openAboutDialog(){
+        showInfoDialog(this, "About Make 'Em Equal", "Click on the math " +
+                "operator to insert that operator into the pair of numbers at the top of the " +
+                "calculator. Do this to the other pair of numbers as well. Keep clicking on the " +
+                "operations until you make 'em equal!");
     }
 }
