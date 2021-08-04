@@ -29,7 +29,7 @@
     <style name="Theme.MakeEmEqual.NoActionBar.SplashScreenTheme">
         <item name="android:background">@drawable/splash_background</item>
     </style>
-    <style name="Theme.MakeEmEqual.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.MakeEmEqual.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="Theme.MakeEmEqual.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.MakeEmEqual.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 </resources>

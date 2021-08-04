@@ -18,7 +18,7 @@ public class LineChooser {
         num1bList = new Integer[]{2, 4, 1, 1, 2, 3, 6, 0, 2, 5, 3, 3, 2, 3, 2, 2, 5, 2, 4, 1};
         num2aList = new Integer[]{4, 4, 1, 4, 8, 4, 8, 0, 3, 4, 2, 6, 6, 4, 1, 3, 1, 8, 8, 3};
         num2bList = new Integer[]{2, 3, 6, 3, 9, 6, 2, 7, 4, 4, 4, 9, 4, 6, 3, 1, 4, 9, 1, 7};
-        answerList = new double[]{2, 12, 7, 1, -1, .6666, 16, 7, 7, 1, 24, 15, 10, 24, 3, 3, 4, 72,
+        answerList = new double[]{2, 12, 7, 1, -1, .666, 16, 7, 7, 1, 24, 15, 10, 24, 3, 3, 4, 72,
                 9, 21};
 
         Random rand = new Random();

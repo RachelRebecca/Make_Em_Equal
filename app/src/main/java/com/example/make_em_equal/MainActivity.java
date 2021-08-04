@@ -1,6 +1,9 @@
 package com.example.make_em_equal;
 
 import android.content.DialogInterface;
+
+import static com.example.make_em_equal.LineChooser.getGameFromJSON;
+import static com.example.make_em_equal.LineChooser.getJSONFromGame;
 import static com.example.make_em_equal.Utils.showYesNoDialog;
 import static com.example.make_em_equal.Utils.showInfoDialog;
 
@@ -8,7 +11,9 @@ import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.view.View;
 
@@ -18,6 +23,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -35,6 +42,43 @@ public class MainActivity extends AppCompatActivity
     private TextView answer2;
     private double answerHint;
 
+    private final String KEY_GAME = "GAME";
+    private final String SPACE_ONE = "1";
+    private final String SPACE_TWO = "2";
+    private final String ANSWER_ONE = "ANSWER_ONE";
+    private final String ANSWER_TWO = "ANSWER_TWO";
+
+
+
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_GAME, getJSONFromGame(lineChooser));
+        outState.putString(SPACE_ONE, space1.getText().toString());
+        outState.putString(SPACE_TWO, space2.getText().toString());
+        outState.putString(ANSWER_ONE, answer1.getText().toString());
+        outState.putString(ANSWER_TWO, answer2.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        lineChooser = getGameFromJSON(savedInstanceState.getString(KEY_GAME));
+        space1.setText(savedInstanceState.getString(SPACE_ONE, "_"));
+        space2.setText(savedInstanceState.getString(SPACE_TWO, "_"));
+        answer1.setText(savedInstanceState.getString(ANSWER_ONE, "_"));
+        answer2.setText(savedInstanceState.getString(ANSWER_TWO, "__"));
+        updateUI();
+    }
+
+    private void updateUI() {
+        num1a.setText(String.valueOf(lineChooser.getNum1A()));
+        num1b.setText(String.valueOf(lineChooser.getNum1B()));
+        num2a.setText(String.valueOf(lineChooser.getNum2A()));
+        num2b.setText(String.valueOf(lineChooser.getNum2B()));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -42,6 +86,7 @@ public class MainActivity extends AppCompatActivity
         setContent();
         setSupportActionBar(binding.toolbar);
         setupFAB();
+
         startNewGame();
     }
 
@@ -126,8 +171,12 @@ public class MainActivity extends AppCompatActivity
             case "x": case "X":
                 answer1.setText(String.valueOf(lineChooser.getNum1A() * lineChooser.getNum1B()));
                 break;
-            case "/":
-                answer1.setText(String.valueOf(lineChooser.getNum1A() / lineChooser.getNum1B()));
+            case "/": case "÷":
+                Double number1a = Double.parseDouble(String.valueOf(lineChooser.getNum1A()));
+                Double number1b = Double.parseDouble(String.valueOf(lineChooser.getNum1B()));
+                double dividedBy1 = (number1a / number1b);
+                double roundDividedBy1 = Math.round(dividedBy1 * 10000.0)/10000.0;
+                answer1.setText(String.valueOf(roundDividedBy1));
                 break;
             case "_": case " ": case "reset": case "Reset":
                 space1.setText(R.string.space);
@@ -151,8 +200,12 @@ public class MainActivity extends AppCompatActivity
             case "x": case "X": case "*":
                 answer2.setText(String.valueOf(lineChooser.getNum2A() * lineChooser.getNum2B()));
                 break;
-            case "/":
-                answer2.setText(String.valueOf(lineChooser.getNum2A() / lineChooser.getNum2B()));
+            case "/": case "÷":
+                Double number2a = Double.parseDouble(String.valueOf(lineChooser.getNum2A()));
+                Double number2b = Double.parseDouble(String.valueOf(lineChooser.getNum2B()));
+                double dividedBy2 = (number2a / number2b);
+                double roundDividedBy2 = Math.round(dividedBy2 * 1000.0)/1000.0;
+                answer2.setText(String.valueOf(roundDividedBy2));
                 break;
             case "_": case " ": case "reset": case "Reset":
                 space2.setText(R.string.space);
