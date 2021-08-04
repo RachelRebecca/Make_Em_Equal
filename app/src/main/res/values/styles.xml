@@ -12,6 +12,7 @@
 
     <style name="TextFormat">
         <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/textColor</item>
         <item name="android:textAppearance">@color/textColor</item>
     </style>
 </resources>
