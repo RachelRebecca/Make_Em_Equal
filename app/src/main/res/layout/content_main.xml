@@ -168,35 +168,40 @@
             style="@style/BorderlessOperators"
             android:layout_marginLeft="20mm"
             android:onClick="selectOperator1"
-            android:text="@string/plus" />
+            android:text="@string/plus"
+            android:layout_marginStart="20mm" />
 
         <Button
             android:id="@+id/button_two_1"
             style="@style/BorderlessOperators"
             android:onClick="selectOperator1"
             android:layout_marginLeft="20mm"
-            android:text="@string/minus" />
+            android:text="@string/minus"
+            android:layout_marginStart="20mm" />
 
         <Button
             android:id="@+id/button_three_1"
             style="@style/BorderlessOperators"
             android:onClick="selectOperator1"
             android:layout_marginLeft="20mm"
-            android:text="@string/times" />
+            android:text="@string/times"
+            android:layout_marginStart="20mm" />
 
         <Button
             android:id="@+id/button_four_1"
             style="@style/BorderlessOperators"
             android:onClick="selectOperator1"
             android:layout_marginLeft="20mm"
-            android:text="@string/divide" />
+            android:text="@string/divide"
+            android:layout_marginStart="20mm" />
 
         <Button
             android:id="@+id/button_five_1"
             style="@style/BorderlessOperators"
             android:layout_marginLeft="20mm"
             android:onClick="selectOperator1"
-            android:text="@string/reset" />
+            android:text="@string/reset"
+            android:layout_marginStart="20mm" />
     </LinearLayout>
 
     <LinearLayout
@@ -216,7 +221,8 @@
             style="@style/BorderlessOperators"
             android:layout_marginRight="15mm"
             android:onClick="selectOperator2"
-            android:text="@string/plus" />
+            android:text="@string/plus"
+            android:layout_marginEnd="15mm" />
 
         <Button
             android:id="@+id/button_two_2"
@@ -241,7 +247,8 @@
             style="@style/BorderlessOperators"
             android:layout_marginRight="20mm"
             android:onClick="selectOperator2"
-            android:text="@string/reset" />
+            android:text="@string/reset"
+            android:layout_marginEnd="20mm" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
