@@ -11,9 +11,17 @@
     <color name="primaryColor">#6200ea</color>
     <color name="primaryLightColor">#6200ea</color>
     <color name="primaryDarkColor">#0a00b6</color>
+    <color name="primaryTextColor">#ffffff</color>
+
     <color name="secondaryColor">#e91e63</color>
     <color name="secondaryLightColor">#ff6090</color>
     <color name="secondaryDarkColor">#b0003a</color>
-    <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
+
+    <color name="primaryTextColoredColor">@color/primaryDarkColor</color>
+    <color name="secondaryTextColoredColor">@color/primaryColor</color>
+    <color name="backgroundColoredColor">@color/primaryLightColor</color>
+    <color name="backgroundDefaultColor">@android:color/background_light</color>
+
+
 </resources>
