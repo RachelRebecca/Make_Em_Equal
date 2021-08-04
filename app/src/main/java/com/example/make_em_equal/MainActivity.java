@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity
             case "/":
                 answer1.setText(String.valueOf(lineChooser.getNum1A() / lineChooser.getNum1B()));
                 break;
-            case "_": case " ": case "reset":
+            case "_": case " ": case "reset": case "Reset":
                 space1.setText(R.string.space);
                 String answer1Text = num1a.getText().toString() + num1b.getText().toString();
                 answer1.setText(answer1Text);
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity
             case "/":
                 answer2.setText(String.valueOf(lineChooser.getNum2A() / lineChooser.getNum2B()));
                 break;
-            case "_": case " ": case "reset":
+            case "_": case " ": case "reset": case "Reset":
                 space2.setText(R.string.space);
                 String answer2Text = num2a.getText().toString() + num2b.getText().toString();
                 answer2.setText(answer2Text);
