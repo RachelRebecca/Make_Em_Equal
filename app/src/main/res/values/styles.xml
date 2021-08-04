@@ -7,5 +7,12 @@
         <item name="android:textAppearance">@style/MaterialAlertDialog.MaterialComponents.Title.Text</item>
         <item name="android:textSize">30sp</item>
         <item name="fontFamily"></item>
+        <item name="backgroundTint">@color/secondaryColor</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextFormat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAppearance">@color/black</item>
     </style>
 </resources>

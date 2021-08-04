@@ -20,15 +20,36 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main"
-        android:id="@+id/include_content_main"/>
+    <include
+        android:id="@+id/include_content_main"
+        layout="@layout/content_main" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_bar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="bottom"
+        app:fabAlignmentMode="end"
+        app:fabAnimationMode="slide"
+        tools:ignore="BottomAppBar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:textColor="@android:color/primary_text_dark" />
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|center"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/baseline_lightbulb_24" />
+        android:src="@drawable/baseline_lightbulb_24"
+        app:layout_anchor="@id/bottom_bar"
+        app:layout_anchorGravity="center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

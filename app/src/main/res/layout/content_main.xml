@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/include_content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:id="@+id/include_content_main">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:id="@+id/question_row"
@@ -14,76 +14,80 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/answer_row"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintStart_toEndOf="@+id/buttons1">
 
         <TextView
             android:id="@+id/num1a"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:text="@string/space">
-        </TextView>
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:text="@string/space" />
 
         <TextView
+            android:id="@+id/space1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/space1"
-            android:text="@string/space">
-        </TextView>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/space" />
 
         <TextView
             android:id="@+id/num1b"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="10dp"
             android:text="@string/space"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/num2a"
             app:layout_constraintStart_toEndOf="@+id/num1a"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/num2a"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:text="@string/space"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/num2b"
             app:layout_constraintStart_toEndOf="@id/num1b"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/space2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/space2"
-            android:text="@string/space">
-        </TextView>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/space" />
 
         <TextView
             android:id="@+id/num2b"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:text="@string/space"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/num2a"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <TextView
@@ -91,26 +95,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/make_equal"
+        android:textAppearance="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
+
     <LinearLayout
         android:id="@+id/answer_row"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
+        android:textAppearance="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/question_row">
+        app:layout_constraintTop_toBottomOf="@id/question_row"
+        app:layout_constraintStart_toEndOf="@+id/buttons1">
 
 
         <TextView
             android:id="@+id/answer1"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
@@ -119,11 +130,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/num1b"
             app:layout_constraintStart_toStartOf="@+id/num1a"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/answer2"
+            style="@style/TextFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -132,8 +143,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/num2b"
             app:layout_constraintStart_toStartOf="@+id/num2a"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
@@ -142,48 +152,49 @@
         android:id="@+id/buttons1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="3dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/question_row"
-        app:layout_constraintStart_toStartOf="@+id/question_row">
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintRight_toLeftOf="@+id/question_row"
+        app:layout_constraintStart_toStartOf="@+id/question_row"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/button_one_1"
             style="@style/BorderlessOperators"
+            android:layout_marginLeft="20mm"
             android:onClick="selectOperator1"
-            android:text="@string/plus"
-            android:layout_marginLeft="25mm"/>
+            android:text="@string/plus" />
 
         <Button
             android:id="@+id/button_two_1"
             style="@style/BorderlessOperators"
             android:onClick="selectOperator1"
-            android:text="@string/minus"
-            android:layout_marginLeft="25mm"/>
+            android:layout_marginLeft="20mm"
+            android:text="@string/minus" />
 
         <Button
             android:id="@+id/button_three_1"
             style="@style/BorderlessOperators"
             android:onClick="selectOperator1"
-            android:text="@string/times"
-            android:layout_marginLeft="25mm"/>
+            android:layout_marginLeft="20mm"
+            android:text="@string/times" />
 
         <Button
             android:id="@+id/button_four_1"
             style="@style/BorderlessOperators"
             android:onClick="selectOperator1"
-            android:text="@string/divide"
-            android:layout_marginLeft="25mm"/>
+            android:layout_marginLeft="20mm"
+            android:text="@string/divide" />
 
         <Button
             android:id="@+id/button_five_1"
             style="@style/BorderlessOperators"
-            android:layout_width="185dp"
+            android:layout_marginLeft="20mm"
             android:onClick="selectOperator1"
-            android:text="@string/reset"
-            android:layout_marginLeft="20mm"/>
+            android:text="@string/reset" />
     </LinearLayout>
 
     <LinearLayout
@@ -191,17 +202,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="3dp"
         app:layout_constraintBottom_toTopOf="@+id/answer_row"
         app:layout_constraintEnd_toEndOf="@+id/question_row"
+        app:layout_constraintLeft_toRightOf="@+id/question_row"
         app:layout_constraintStart_toEndOf="@+id/question_row"
         app:layout_constraintTop_toBottomOf="@+id/question_row">
 
         <Button
             android:id="@+id/button_one_2"
             style="@style/BorderlessOperators"
+            android:layout_marginRight="15mm"
             android:onClick="selectOperator2"
-            android:text="@string/plus"
-            android:layout_marginRight="15mm"/>
+            android:text="@string/plus" />
 
         <Button
             android:id="@+id/button_two_2"
@@ -224,9 +237,9 @@
         <Button
             android:id="@+id/button_five_2"
             style="@style/BorderlessOperators"
-            android:text="@string/reset"
+            android:layout_marginRight="20mm"
             android:onClick="selectOperator2"
-            android:layout_marginRight="20mm"/>
+            android:text="@string/reset" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
