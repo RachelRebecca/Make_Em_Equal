@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity
     private final String SPACE_TWO = "2";
     private final String ANSWER_ONE = "ANSWER_ONE";
     private final String ANSWER_TWO = "ANSWER_TWO";
+    private final String ANSWER_HINT = "ANSWER_HINT";
 
 
 
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         outState.putString(SPACE_TWO, space2.getText().toString());
         outState.putString(ANSWER_ONE, answer1.getText().toString());
         outState.putString(ANSWER_TWO, answer2.getText().toString());
+        outState.putDouble(ANSWER_HINT, answerHint);
     }
 
     @Override
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity
         space2.setText(savedInstanceState.getString(SPACE_TWO, "_"));
         answer1.setText(savedInstanceState.getString(ANSWER_ONE, "_"));
         answer2.setText(savedInstanceState.getString(ANSWER_TWO, "__"));
+        answerHint = savedInstanceState.getDouble(ANSWER_HINT);
         updateUI();
     }
 
@@ -204,7 +207,7 @@ public class MainActivity extends AppCompatActivity
                 Double number2a = Double.parseDouble(String.valueOf(lineChooser.getNum2A()));
                 Double number2b = Double.parseDouble(String.valueOf(lineChooser.getNum2B()));
                 double dividedBy2 = (number2a / number2b);
-                double roundDividedBy2 = Math.round(dividedBy2 * 1000.0)/1000.0;
+                double roundDividedBy2 = Math.round(dividedBy2 * 10000.0)/10000.0;
                 answer2.setText(String.valueOf(roundDividedBy2));
                 break;
             case "_": case " ": case "reset": case "Reset":
@@ -233,6 +236,10 @@ public class MainActivity extends AppCompatActivity
     {
         boolean isEqual = false;
         if (answer1.getText().toString().equals(answer2.getText().toString()))
+        {
+            isEqual = true;
+        }
+        else if (Double.parseDouble(answer1.getText().toString()) == Double.parseDouble(answer2.getText().toString()))
         {
             isEqual = true;
         }
