@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20462962962962963" />
-        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/drawable/app_background.xml" value="0.20462962962962963" />
-        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/layout/content_main.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/layout/content_main.xml" value="0.1796875" />
+        <entry key="app/src/main/res/drawable-nodpi-v23/splash_background.xml" value="0.1421875" />
+        <entry key="app/src/main/res/drawable-nodpi/splash_background.xml" value="0.1421875" />
+        <entry key="app/src/main/res/drawable/baseline_lightbulb_24.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.1978887393736699" />
       </map>
     </option>
   </component>
