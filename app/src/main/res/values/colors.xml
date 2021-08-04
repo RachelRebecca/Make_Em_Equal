@@ -14,6 +14,7 @@
     <color name="backgroundColoredColor">@color/primaryLightColor</color>
     <color name="backgroundDefaultColor">@android:color/background_light</color>
 
+
     <color name="textColor">@android:color/black</color>
 
 </resources>
