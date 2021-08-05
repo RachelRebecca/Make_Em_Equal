@@ -7,6 +7,8 @@ import static com.example.make_em_equal.LineChooser.getJSONFromGame;
 import static com.example.make_em_equal.Utils.showYesNoDialog;
 import static com.example.make_em_equal.Utils.showInfoDialog;
 
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -120,6 +122,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
+
 
     private void startNewGame()
     {
@@ -270,6 +273,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.action_settings)
         {
+            showSettings();
             return true;
         }
         else if (id == R.id.about)
@@ -301,5 +305,11 @@ public class MainActivity extends AppCompatActivity
                 "operator to insert that operator into the pair of numbers at the top of the " +
                 "calculator. Do this to the other pair of numbers as well. Keep clicking on the " +
                 "operations until you make 'em equal!");
+    }
+
+    private void showSettings() {
+        //dismissSnackBarIfShown();
+        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+        startActivityForResult(intent, 1);
     }
 }
