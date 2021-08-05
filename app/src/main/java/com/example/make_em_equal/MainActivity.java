@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
         {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "HINT: Try to make them equal to " + answerHint, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Hint: Try to make them equal to " + answerHint, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
