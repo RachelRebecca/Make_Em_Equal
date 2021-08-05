@@ -15,4 +15,11 @@
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textAppearance">@color/textColor</item>
     </style>
+
+    <style name="ToolbarTheme">
+        <item name="android:fontFamily">@font/caudex_bold</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textAppearance">@color/textColor</item>
+    </style>
+
 </resources>

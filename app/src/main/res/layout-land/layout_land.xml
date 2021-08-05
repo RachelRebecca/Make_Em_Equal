@@ -168,7 +168,8 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintRight_toLeftOf="@+id/question_row"
         app:layout_constraintStart_toStartOf="@+id/question_row"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintGuide_percent=".5">
 
         <Button
             android:id="@+id/button_one_1"
