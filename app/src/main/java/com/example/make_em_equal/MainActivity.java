@@ -1,5 +1,7 @@
 package com.example.make_em_equal;
 
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.content.DialogInterface;
 
 import static com.example.make_em_equal.LineChooser.getGameFromJSON;
@@ -8,12 +10,16 @@ import static com.example.make_em_equal.Utils.showYesNoDialog;
 import static com.example.make_em_equal.Utils.showInfoDialog;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -307,9 +313,28 @@ public class MainActivity extends AppCompatActivity
                 "operations until you make 'em equal!");
     }
 
+
+
     private void showSettings() {
-        //dismissSnackBarIfShown();
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-        startActivityForResult(intent, 1);
+        settingsLauncher.launch (intent);
+        // startActivityForResult(intent, 1);
+    }
+
+    ActivityResultLauncher<Intent> settingsLauncher = registerForActivityResult (
+            new ActivityResultContracts.StartActivityForResult (),
+            result -> restoreOrSetFromPreferences_AllAppAndGameSettings ());
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 1) {
+            restoreOrSetFromPreferences_AllAppAndGameSettings();
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private void restoreOrSetFromPreferences_AllAppAndGameSettings() {
+        SharedPreferences sp = getDefaultSharedPreferences(this);
     }
 }

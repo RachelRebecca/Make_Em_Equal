@@ -7,6 +7,13 @@
     android:background="@drawable/texture_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
     <LinearLayout
         android:id="@+id/question_row"
         android:layout_width="match_parent"
