@@ -166,6 +166,8 @@ public class MainActivity extends AppCompatActivity
 
         //set up hint value
         answerHint = lineChooser.getAnswer();
+
+        contentMessage.setText(R.string.make_equal);
     }
 
     public void selectOperator1(View view)
