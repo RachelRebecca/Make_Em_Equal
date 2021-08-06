@@ -57,10 +57,6 @@ public class MainActivity extends AppCompatActivity
     private final String ANSWER_TWO = "ANSWER_TWO";
     private final String ANSWER_HINT = "ANSWER_HINT";
 
-    private boolean use_hint_box;
-    private String mKEY_SHOW_HINT;
-    private TextView hint_box;
-
 
 
     @Override
@@ -118,7 +114,6 @@ public class MainActivity extends AppCompatActivity
         num2b = binding.includeContentMain.num2b;
         answer1 = binding.includeContentMain.answer1;
         answer2 = binding.includeContentMain.answer2;
-        mKEY_SHOW_HINT = getString(R.string.hint_key);
     }
 
     private void setupFAB()
