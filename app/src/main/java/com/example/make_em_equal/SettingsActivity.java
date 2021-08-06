@@ -2,6 +2,7 @@ package com.example.make_em_equal;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -53,6 +54,8 @@ public class SettingsActivity extends AppCompatActivity {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
 
             setNightModePreferenceListener();
+
+            //setHintPreferenceListener();
         }
         private void setNightModePreferenceListener() {
             Preference nightModePreference = findPreference(getString(R.string.night_mode_key));
@@ -64,5 +67,28 @@ public class SettingsActivity extends AppCompatActivity {
                 });
             }
         }
+
+        /*
+       private void setHintPreferenceListener() {
+            Preference hintPreference = findPreference(getString(R.string.hint_key));
+            if (hintPreference != null){
+                hintPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+                    Boolean newBooleanValue = (Boolean) newValue;
+                    setHintPreference(newBooleanValue, requireView().findViewById(R.id.hint_box));
+                    return true;
+                });
+            }
+       }
+
+        public static void setHintPreference(Boolean setToOn, TextView hint_box){
+            String hint = "Hint: try to make them equal to " + MainActivity.answerHint;
+            if (setToOn){
+                hint_box.setText(hint);
+            }
+            else {
+                hint_box.setText("");
+            }
+        }
+         */
     }
 }

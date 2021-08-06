@@ -18,10 +18,16 @@
 
     <!-- Preference Titles -->
     <string name="display_header">Display</string>
+    <string name="game">Game</string>
 
     <!-- Preferences -->
     <string name="night_mode_key">Night Mode</string>
     <string name="night_mode_title">Night/Dark Mode</string>
     <string name="night_mode_off">Never use Night/Dark Mode</string>
     <string name="night_mode_on">Night/Dark Mode (unless disabled in OS Settings)</string>
+
+    <string name="hint_key">Hint</string>
+    <string name="hint_title">Hint</string>
+    <string name="show_hint">Always show hint</string>
+    <string name="do_not_show_hint">Don\'t always show hint</string>
 </resources>
