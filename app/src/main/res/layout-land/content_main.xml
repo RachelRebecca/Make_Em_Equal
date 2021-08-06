@@ -167,16 +167,14 @@
         android:id="@+id/buttons1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="60dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/question_row"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintRight_toLeftOf="@+id/question_row"
         app:layout_constraintStart_toStartOf="@+id/question_row"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintGuide_percent=".5">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/button_one_1"
@@ -228,7 +226,8 @@
         android:id="@+id/buttons2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="60dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/answer_row"
         app:layout_constraintEnd_toEndOf="@+id/question_row"
@@ -248,7 +247,7 @@
         <Button
             android:id="@+id/button_two_2"
             style="@style/BorderlessOperators"
-            android:fontFamily="@font/caudex"
+            android:fontFamily="@font/caudex_bold"
             android:onClick="selectOperator2"
             android:text="@string/minus" />
 
