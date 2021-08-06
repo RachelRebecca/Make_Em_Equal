@@ -55,6 +55,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             setNightModePreferenceListener();
         }
+
         private void setNightModePreferenceListener() {
             Preference nightModePreference = findPreference(getString(R.string.night_mode_key));
             if (nightModePreference != null) {

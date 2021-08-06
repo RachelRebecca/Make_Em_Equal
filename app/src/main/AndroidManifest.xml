@@ -11,6 +11,7 @@
         android:theme="@style/Theme.MakeEmEqual.NoActionBar.SplashScreenTheme">
         <activity
             android:name=".SettingsActivity"
+            android:theme="@style/Theme.MakeEmEqual"
             android:exported="true"
             android:label="@string/title_activity_settings" />
         <activity
