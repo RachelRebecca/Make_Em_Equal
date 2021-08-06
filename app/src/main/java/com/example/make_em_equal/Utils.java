@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
 public class Utils
+    /* Class is based off Utils.java from other class apps*/
 {
     /*
     Night Mode-related helper methods
