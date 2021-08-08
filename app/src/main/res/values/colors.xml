@@ -16,5 +16,6 @@
 
 
     <color name="textColor">@android:color/black</color>
+    <color name="menuTextColor">@android:color/black</color>
 
 </resources>
