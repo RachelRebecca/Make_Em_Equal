@@ -61,6 +61,13 @@ public class MainActivity extends AppCompatActivity
     private String HINT_BOX;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+
+        restoreOrSetFromPreferencesHintSettings();
+    }
+
+    @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(KEY_GAME, getJSONFromGame(lineChooser));
