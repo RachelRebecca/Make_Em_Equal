@@ -50,14 +50,15 @@ public class MainActivity extends AppCompatActivity
     private TextView answer2;
     private double answerHint;
 
+    private TextView hintBox;
+
     private final String KEY_GAME = "GAME";
     private final String SPACE_ONE = "1";
     private final String SPACE_TWO = "2";
     private final String ANSWER_ONE = "ANSWER_ONE";
     private final String ANSWER_TWO = "ANSWER_TWO";
     private final String ANSWER_HINT = "ANSWER_HINT";
-
-
+    private String HINT_BOX;
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity
         outState.putString(ANSWER_ONE, answer1.getText().toString());
         outState.putString(ANSWER_TWO, answer2.getText().toString());
         outState.putDouble(ANSWER_HINT, answerHint);
+        outState.putString(HINT_BOX, hintBox.getText().toString());
     }
 
     @Override
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity
         answer1.setText(savedInstanceState.getString(ANSWER_ONE, "_"));
         answer2.setText(savedInstanceState.getString(ANSWER_TWO, "__"));
         answerHint = savedInstanceState.getDouble(ANSWER_HINT);
+        hintBox.setText(savedInstanceState.getString(HINT_BOX, ""));
         updateUI();
     }
 
@@ -114,6 +117,8 @@ public class MainActivity extends AppCompatActivity
         num2b = binding.includeContentMain.num2b;
         answer1 = binding.includeContentMain.answer1;
         answer2 = binding.includeContentMain.answer2;
+
+        hintBox = binding.hintBox;
     }
 
     private void setupFAB()
@@ -168,6 +173,9 @@ public class MainActivity extends AppCompatActivity
         answerHint = lineChooser.getAnswer();
 
         contentMessage.setText(R.string.make_equal);
+
+        HINT_BOX = getString(R.string.hint_key);
+        restoreOrSetFromPreferencesHintSettings();
     }
 
     public void selectOperator1(View view)
@@ -314,29 +322,37 @@ public class MainActivity extends AppCompatActivity
                 "operations until you make 'em equal!");
     }
 
-
-
     private void showSettings() {
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
         settingsLauncher.launch (intent);
-        // startActivityForResult(intent, 1);
     }
 
     ActivityResultLauncher<Intent> settingsLauncher = registerForActivityResult (
             new ActivityResultContracts.StartActivityForResult (),
-            result -> restoreOrSetFromPreferences_AllAppAndGameSettings ());
+            result -> restoreOrSetFromPreferencesHintSettings ());
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == 1) {
-            restoreOrSetFromPreferences_AllAppAndGameSettings();
+            restoreOrSetFromPreferencesHintSettings();
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
-    private void restoreOrSetFromPreferences_AllAppAndGameSettings() {
+    private void restoreOrSetFromPreferencesHintSettings() {
         SharedPreferences sp = getDefaultSharedPreferences(this);
+        setHintBoxRevealed(sp.getBoolean(getString(R.string.hint_key), false));
+    }
+
+    public void setHintBoxRevealed(Boolean sp){
+        if (sp) {
+            String hintText = "Hint: Try to make them equal to " + answerHint;
+            hintBox.setText(hintText);
+        }
+        else{
+            hintBox.setText("");
+        }
     }
 
 }

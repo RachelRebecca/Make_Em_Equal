@@ -39,6 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
+            android:id="@+id/hint_box"
+            android:text=""
             android:theme="@style/FABTheme"/>
     </com.google.android.material.bottomappbar.BottomAppBar>
 
