@@ -51,6 +51,7 @@
         style="@style/BorderlessOperators"
         android:layout_marginEnd="@dimen/button_side_margin"
         android:layout_marginRight="@dimen/button_side_margin"
+        android:textSize="@dimen/reset_button_text_size"
         android:fontFamily="@font/caudex"
         android:onClick="selectOperator2"
         android:text="@string/reset" />

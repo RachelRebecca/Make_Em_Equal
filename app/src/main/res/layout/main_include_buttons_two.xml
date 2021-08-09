@@ -47,6 +47,7 @@
     <Button
         android:id="@+id/button_five_2"
         style="@style/BorderlessOperators"
+        android:textSize="@dimen/reset_button_text_size"
         android:layout_marginEnd="@dimen/button_side_margin"
         android:layout_marginRight="@dimen/button_side_margin"
         android:fontFamily="@font/caudex"

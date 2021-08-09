@@ -57,6 +57,7 @@
         android:layout_marginStart="@dimen/button_side_margin"
         android:layout_marginLeft="@dimen/button_side_margin"
         android:fontFamily="@font/caudex"
+        android:textSize="@dimen/reset_button_text_size"
         android:onClick="selectOperator1"
         android:text="@string/reset" />
 </LinearLayout>
