@@ -19,6 +19,7 @@
         android:textAppearance="@color/textColor"
         android:textColor="@color/textColor"
         android:textSize="@dimen/text_size"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

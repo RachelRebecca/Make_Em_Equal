@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="dp_level">sw380</string>
+
+    <dimen name="text_view_margin">2dp</dimen>
+    <dimen name="text_view_ends">20dp</dimen>
+    <dimen name="text_view_middle">5dp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="fab_text_size">15sp</dimen>
+
+    <dimen name="answer_margins">25dp</dimen>
+
+    <dimen name="button_side_margin">126dp</dimen>
+    <dimen name="button_text_size">30sp</dimen>
+    <dimen name="button_top_margin">3dp</dimen>
+    <dimen name="button_alt_side_margin">95dp</dimen>
+
+    <dimen name="reset_button_text_size">30sp</dimen>
+
+    <dimen name="button_margin_top_land">0dp</dimen>
+    <dimen name="button_margin_bottom_land">60dp</dimen>
 </resources>

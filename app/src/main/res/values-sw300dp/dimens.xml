@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="text_view_ends">15dp</dimen>
+
+    <dimen name="button_text_size">20sp</dimen>
+    <dimen name="reset_button_text_size">20sp</dimen>
+    <dimen name="fab_text_size">12sp</dimen>
+    <dimen name="text_size">15sp</dimen>
+
+    <dimen name="button_side_margin">126dp</dimen>
+    <dimen name="button_top_margin">3dp</dimen>
+    <dimen name="button_alt_side_margin">95dp</dimen>
+
     <string name="dp_level">sw300</string>
+
 </resources>
