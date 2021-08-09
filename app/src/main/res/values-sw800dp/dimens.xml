@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_text_size">30sp</dimen>
+
+    <dimen name="text_size">50sp</dimen>
+    <dimen name="text_view_ends">50dp</dimen>
+
+    <dimen name="button_text_size">60sp</dimen>
+
+    <dimen name="button_side_margin">200dp</dimen>
+    <dimen name="button_top_margin">30dp</dimen>
+    <dimen name="button_alt_side_margin">150dp</dimen>
+
+    <string name="dp_level">sw800</string>
+
+</resources>
