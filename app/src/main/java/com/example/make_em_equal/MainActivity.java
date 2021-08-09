@@ -1,6 +1,8 @@
 package com.example.make_em_equal;
 
-import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+//import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 import android.content.DialogInterface;
 

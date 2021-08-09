@@ -179,8 +179,8 @@
         <Button
             android:id="@+id/button_one_1"
             style="@style/BorderlessOperators"
-            android:layout_marginStart="20mm"
-            android:layout_marginLeft="20mm"
+            android:layout_marginStart="126dp"
+            android:layout_marginLeft="126dp"
             android:fontFamily="@font/caudex_bold"
             android:onClick="selectOperator1"
             android:text="@string/plus" />
@@ -188,8 +188,8 @@
         <Button
             android:id="@+id/button_two_1"
             style="@style/BorderlessOperators"
-            android:layout_marginStart="20mm"
-            android:layout_marginLeft="20mm"
+            android:layout_marginStart="126dp"
+            android:layout_marginLeft="126dp"
             android:fontFamily="@font/caudex_bold"
             android:onClick="selectOperator1"
             android:text="@string/minus" />
@@ -197,8 +197,8 @@
         <Button
             android:id="@+id/button_three_1"
             style="@style/BorderlessOperators"
-            android:layout_marginStart="20mm"
-            android:layout_marginLeft="20mm"
+            android:layout_marginStart="126dp"
+            android:layout_marginLeft="126dp"
             android:fontFamily="@font/caudex"
             android:onClick="selectOperator1"
             android:text="@string/times" />
@@ -206,8 +206,8 @@
         <Button
             android:id="@+id/button_four_1"
             style="@style/BorderlessOperators"
-            android:layout_marginStart="20mm"
-            android:layout_marginLeft="20mm"
+            android:layout_marginStart="126dp"
+            android:layout_marginLeft="126dp"
             android:fontFamily="@font/caudex_bold"
             android:onClick="selectOperator1"
             android:text="@string/divide" />
@@ -215,8 +215,8 @@
         <Button
             android:id="@+id/button_five_1"
             style="@style/BorderlessOperators"
-            android:layout_marginStart="20mm"
-            android:layout_marginLeft="20mm"
+            android:layout_marginStart="126dp"
+            android:layout_marginLeft="126dp"
             android:fontFamily="@font/caudex"
             android:onClick="selectOperator1"
             android:text="@string/reset" />
@@ -238,8 +238,8 @@
         <Button
             android:id="@+id/button_one_2"
             style="@style/BorderlessOperators"
-            android:layout_marginEnd="15mm"
-            android:layout_marginRight="15mm"
+            android:layout_marginEnd="95dp"
+            android:layout_marginRight="95dp"
             android:fontFamily="@font/caudex_bold"
             android:onClick="selectOperator2"
             android:text="@string/plus" />
@@ -268,8 +268,8 @@
         <Button
             android:id="@+id/button_five_2"
             style="@style/BorderlessOperators"
-            android:layout_marginEnd="20mm"
-            android:layout_marginRight="20mm"
+            android:layout_marginEnd="126dp"
+            android:layout_marginRight="126dp"
             android:fontFamily="@font/caudex"
             android:onClick="selectOperator2"
             android:text="@string/reset" />
