@@ -14,92 +14,8 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".5" />
 
-    <LinearLayout
-        android:id="@+id/question_row"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/answer_row"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/buttons1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/num1a"
-            style="@style/TextFormat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:fontFamily="@font/caudex_bold"
-            android:text="@string/space" />
-
-        <TextView
-            android:id="@+id/space1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:text="@string/space" />
-
-        <TextView
-            android:id="@+id/num1b"
-            style="@style/TextFormat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="10dp"
-            android:fontFamily="@font/caudex_bold"
-            android:text="@string/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/num2a"
-            app:layout_constraintStart_toEndOf="@+id/num1a"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/num2a"
-            style="@style/TextFormat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:fontFamily="@font/caudex_bold"
-            android:text="@string/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/num2b"
-            app:layout_constraintStart_toEndOf="@id/num1b"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/space2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:text="@string/space" />
-
-        <TextView
-            android:id="@+id/num2b"
-            style="@style/TextFormat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
-            android:fontFamily="@font/caudex_bold"
-            android:text="@string/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/num2a"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
+    <include layout="@layout/main_include_top_row"
+        android:id="@+id/question_row"/>
 
     <TextView
         android:id="@+id/content_message"
@@ -109,7 +25,7 @@
         android:text="@string/make_equal"
         android:textAppearance="@color/textColor"
         android:textColor="@color/textColor"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,162 +33,13 @@
 
     </TextView>
 
-    <LinearLayout
-        android:id="@+id/answer_row"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:textAppearance="@color/textColor"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttons1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/question_row">
+    <include layout="@layout/main_include_answer_row"
+        android:id="@+id/answer_row"/>
 
+    <include layout="@layout/main_include_buttons_one"
+        android:id="@+id/buttons1"/>
 
-        <TextView
-            android:id="@+id/answer1"
-            style="@style/TextFormat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:layout_marginRight="25dp"
-            android:fontFamily="@font/caudex_bold"
-            android:text="@string/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/num1b"
-            app:layout_constraintStart_toStartOf="@+id/num1a"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/answer2"
-            style="@style/TextFormat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:fontFamily="@font/caudex_bold"
-            android:text="@string/space"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/num2b"
-            app:layout_constraintStart_toStartOf="@+id/num2a"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/buttons1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/question_row"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintRight_toLeftOf="@+id/question_row"
-        app:layout_constraintStart_toStartOf="@+id/question_row"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/button_one_1"
-            style="@style/BorderlessOperators"
-            android:layout_marginStart="126dp"
-            android:layout_marginLeft="126dp"
-            android:fontFamily="@font/caudex_bold"
-            android:onClick="selectOperator1"
-            android:text="@string/plus" />
-
-        <Button
-            android:id="@+id/button_two_1"
-            style="@style/BorderlessOperators"
-            android:layout_marginStart="126dp"
-            android:layout_marginLeft="126dp"
-            android:fontFamily="@font/caudex_bold"
-            android:onClick="selectOperator1"
-            android:text="@string/minus" />
-
-        <Button
-            android:id="@+id/button_three_1"
-            style="@style/BorderlessOperators"
-            android:layout_marginStart="126dp"
-            android:layout_marginLeft="126dp"
-            android:fontFamily="@font/caudex"
-            android:onClick="selectOperator1"
-            android:text="@string/times" />
-
-        <Button
-            android:id="@+id/button_four_1"
-            style="@style/BorderlessOperators"
-            android:layout_marginStart="126dp"
-            android:layout_marginLeft="126dp"
-            android:fontFamily="@font/caudex_bold"
-            android:onClick="selectOperator1"
-            android:text="@string/divide" />
-
-        <Button
-            android:id="@+id/button_five_1"
-            style="@style/BorderlessOperators"
-            android:layout_marginStart="126dp"
-            android:layout_marginLeft="126dp"
-            android:fontFamily="@font/caudex"
-            android:onClick="selectOperator1"
-            android:text="@string/reset" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/buttons2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="60dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/answer_row"
-        app:layout_constraintEnd_toEndOf="@+id/question_row"
-        app:layout_constraintLeft_toRightOf="@+id/question_row"
-        app:layout_constraintStart_toEndOf="@+id/question_row"
-        app:layout_constraintTop_toBottomOf="@+id/question_row">
-
-        <Button
-            android:id="@+id/button_one_2"
-            style="@style/BorderlessOperators"
-            android:layout_marginEnd="95dp"
-            android:layout_marginRight="95dp"
-            android:fontFamily="@font/caudex_bold"
-            android:onClick="selectOperator2"
-            android:text="@string/plus" />
-
-        <Button
-            android:id="@+id/button_two_2"
-            style="@style/BorderlessOperators"
-            android:fontFamily="@font/caudex_bold"
-            android:onClick="selectOperator2"
-            android:text="@string/minus" />
-
-        <Button
-            android:id="@+id/button_three_2"
-            style="@style/BorderlessOperators"
-            android:fontFamily="@font/caudex"
-            android:onClick="selectOperator2"
-            android:text="@string/times" />
-
-        <Button
-            android:id="@+id/button_four_2"
-            style="@style/BorderlessOperators"
-            android:fontFamily="@font/caudex_bold"
-            android:onClick="selectOperator2"
-            android:text="@string/divide" />
-
-        <Button
-            android:id="@+id/button_five_2"
-            style="@style/BorderlessOperators"
-            android:layout_marginEnd="126dp"
-            android:layout_marginRight="126dp"
-            android:fontFamily="@font/caudex"
-            android:onClick="selectOperator2"
-            android:text="@string/reset" />
-    </LinearLayout>
+    <include layout="@layout/main_include_buttons_two"
+        android:id="@+id/buttons2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

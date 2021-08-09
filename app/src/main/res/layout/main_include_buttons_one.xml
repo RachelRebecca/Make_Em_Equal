@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buttons1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/button_top_margin"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/question_row"
+    app:layout_constraintRight_toLeftOf="@+id/question_row"
+    app:layout_constraintStart_toStartOf="@+id/question_row"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:showIn="@layout/content_main">
+
+    <Button
+        android:id="@+id/button_one_1"
+        style="@style/BorderlessOperators"
+        android:layout_marginStart="@dimen/button_side_margin"
+        android:layout_marginLeft="@dimen/button_side_margin"
+        android:fontFamily="@font/caudex_bold"
+        android:onClick="selectOperator1"
+        android:text="@string/plus" />
+
+    <Button
+        android:id="@+id/button_two_1"
+        style="@style/BorderlessOperators"
+        android:layout_marginStart="@dimen/button_side_margin"
+        android:layout_marginLeft="@dimen/button_side_margin"
+        android:fontFamily="@font/caudex_bold"
+        android:onClick="selectOperator1"
+        android:text="@string/minus" />
+
+    <Button
+        android:id="@+id/button_three_1"
+        style="@style/BorderlessOperators"
+        android:layout_marginStart="@dimen/button_side_margin"
+        android:layout_marginLeft="@dimen/button_side_margin"
+        android:fontFamily="@font/caudex"
+        android:onClick="selectOperator1"
+        android:text="@string/times" />
+
+    <Button
+        android:id="@+id/button_four_1"
+        style="@style/BorderlessOperators"
+        android:layout_marginStart="@dimen/button_side_margin"
+        android:layout_marginLeft="@dimen/button_side_margin"
+        android:fontFamily="@font/caudex_bold"
+        android:onClick="selectOperator1"
+        android:text="@string/divide" />
+
+    <Button
+        android:id="@+id/button_five_1"
+        style="@style/BorderlessOperators"
+        android:layout_marginStart="@dimen/button_side_margin"
+        android:layout_marginLeft="@dimen/button_side_margin"
+        android:fontFamily="@font/caudex"
+        android:onClick="selectOperator1"
+        android:text="@string/reset" />
+</LinearLayout>
+
+    

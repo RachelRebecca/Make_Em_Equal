@@ -1,8 +1,8 @@
 package com.example.make_em_equal;
 
-//import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
+import static androidx.preference.PreferenceManager.getDefaultSharedPreferences;
 
-import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+//import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 import android.content.DialogInterface;
 
@@ -16,6 +16,8 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
+import com.example.make_em_equal.databinding.ActivityMainBinding;
+import com.example.make_em_equal.databinding.MainIncludeBottomBarAndFabBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -26,8 +28,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.view.View;
-
-import com.example.make_em_equal.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity
 {
 
     private ActivityMainBinding binding;
+    private MainIncludeBottomBarAndFabBinding bottomBarAndFabBinding;
+
     private LineChooser lineChooser;
     private TextView contentMessage;
     private TextView num1a;
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContent();
-        setSupportActionBar(binding.toolbar);
+        setSupportActionBar(binding.includeToolbar.toolbar);
         setupFAB();
 
         startNewGame();
@@ -115,24 +117,26 @@ public class MainActivity extends AppCompatActivity
     private void setContent()
     {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        bottomBarAndFabBinding = MainIncludeBottomBarAndFabBinding.bind(binding.getRoot());
+
         setContentView(binding.getRoot());
 
         contentMessage = binding.includeContentMain.contentMessage;
-        num1a = binding.includeContentMain.num1a;
-        space1 = binding.includeContentMain.space1;
-        num1b = binding.includeContentMain.num1b;
-        num2a = binding.includeContentMain.num2a;
-        space2 = binding.includeContentMain.space2;
-        num2b = binding.includeContentMain.num2b;
-        answer1 = binding.includeContentMain.answer1;
-        answer2 = binding.includeContentMain.answer2;
+        num1a = binding.includeContentMain.questionRow.num1a;
+        space1 = binding.includeContentMain.questionRow.space1;
+        num1b = binding.includeContentMain.questionRow.num1b;
+        num2a = binding.includeContentMain.questionRow.num2a;
+        space2 = binding.includeContentMain.questionRow.space2;
+        num2b = binding.includeContentMain.questionRow.num2b;
+        answer1 = binding.includeContentMain.answerRow.answer1;
+        answer2 = binding.includeContentMain.answerRow.answer2;
 
-        hintBox = binding.hintBox;
+        hintBox = bottomBarAndFabBinding.hintBox;
     }
 
     private void setupFAB()
     {
-        binding.fab.setOnClickListener(new View.OnClickListener()
+        bottomBarAndFabBinding.fab.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view) {

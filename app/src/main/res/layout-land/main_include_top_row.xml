@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/question_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@id/answer_row"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toEndOf="@+id/buttons1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:showIn="@layout/content_main">
+
+    <TextView
+        android:id="@+id/num1a"
+        style="@style/TextFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_view_margin"
+        android:layout_marginRight="@dimen/text_view_margin"
+        android:fontFamily="@font/caudex_bold"
+        android:text="@string/space" />
+
+    <TextView
+        android:id="@+id/space1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_view_middle"
+        android:layout_marginRight="@dimen/text_view_middle"
+        android:text="@string/space" />
+
+    <TextView
+        android:id="@+id/num1b"
+        style="@style/TextFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_view_margin"
+        android:layout_marginLeft="@dimen/text_view_margin"
+        android:layout_marginEnd="@dimen/text_view_ends"
+        android:layout_marginRight="@dimen/text_view_ends"
+        android:fontFamily="@font/caudex_bold"
+        android:text="@string/space" />
+
+    <TextView
+        android:id="@+id/num2a"
+        style="@style/TextFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_view_ends"
+        android:layout_marginLeft="@dimen/text_view_ends"
+        android:layout_marginEnd="@dimen/text_view_margin"
+        android:layout_marginRight="@dimen/text_view_margin"
+        android:fontFamily="@font/caudex_bold"
+        android:text="@string/space" />
+
+    <TextView
+        android:id="@+id/space2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_view_middle"
+        android:layout_marginRight="@dimen/text_view_middle"
+        android:text="@string/space" />
+
+    <TextView
+        android:id="@+id/num2b"
+        style="@style/TextFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_view_margin"
+        android:layout_marginRight="@dimen/text_view_margin"
+        android:fontFamily="@font/caudex_bold"
+        android:text="@string/space" />
+</LinearLayout>

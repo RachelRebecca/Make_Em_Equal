@@ -3,10 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/layout/content_main.xml" value="0.1796875" />
-        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/layout/settings_activity.xml" value="0.1796875" />
-        <entry key="..\:/Users/nrben/OneDrive/Documents/GitHub/Make_Em_Equal/app/src/main/res/menu/menu_main.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-nodpi-v23/splash_background.xml" value="0.1421875" />
         <entry key="app/src/main/res/drawable-nodpi/splash_background.xml" value="0.1421875" />
         <entry key="app/src/main/res/drawable/app_background.xml" value="0.26" />
@@ -14,8 +11,20 @@
         <entry key="app/src/main/res/layout-land/content_main.xml" value="0.12389770723104056" />
         <entry key="app/src/main/res/layout-land/layout_land.xml" value="0.1" />
         <entry key="app/src/main/res/layout-land/main_include.xml" value="0.10008818342151675" />
+        <entry key="app/src/main/res/layout-land/main_include_answer_row.xml" value="0.20987654320987653" />
+        <entry key="app/src/main/res/layout-land/main_include_buttons_one.xml" value="0.20987654320987653" />
+        <entry key="app/src/main/res/layout-land/main_include_buttons_two.xml" value="0.20987654320987653" />
+        <entry key="app/src/main/res/layout-land/main_include_top_row.xml" value="0.1371252204585538" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.1978887393736699" />
+        <entry key="app/src/main/res/layout/main_include_answer_row.xml" value="0.22146739130434784" />
+        <entry key="app/src/main/res/layout/main_include_bottom_bar_and_fab.xml" value="0.16197916666666667" />
+        <entry key="app/src/main/res/layout/main_include_buttons_one.xml" value="0.22146739130434784" />
+        <entry key="app/src/main/res/layout/main_include_buttons_two.xml" value="0.22146739130434784" />
+        <entry key="app/src/main/res/layout/main_include_toolbar.xml" value="0.16197916666666667" />
+        <entry key="app/src/main/res/layout/main_include_top_row.xml" value="0.22146739130434784" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.11822916666666666" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.1398148148148148" />
         <entry key="app/src/main/res/xml/root_preferences.xml" value="0.13903985507246377" />
       </map>
     </option>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/answer_row"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:textAppearance="@color/textColor"
+    android:textSize="@dimen/text_size"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/buttons1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/question_row"
+    tools:showIn="@layout/content_main">
+
+
+    <TextView
+        android:id="@+id/answer1"
+        style="@style/TextFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/answer_margins"
+        android:layout_marginRight="@dimen/answer_margins"
+        android:fontFamily="@font/caudex_bold"
+        android:text="@string/space" />
+
+    <TextView
+        android:id="@+id/answer2"
+        style="@style/TextFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/answer_margins"
+        android:layout_marginLeft="@dimen/answer_margins"
+        android:fontFamily="@font/caudex_bold"
+        android:text="@string/space" />
+
+</LinearLayout>

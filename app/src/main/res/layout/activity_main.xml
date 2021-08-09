@@ -6,54 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.MakeEmEqual.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.MakeEmEqual.PopupOverlay"
-            android:theme="@style/ToolbarTheme"/>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    <include
+        android:id="@id/include_toolbar"
+        layout="@layout/main_include_toolbar" />
 
     <include
-        android:id="@+id/include_content_main"
+        android:id="@id/include_content_main"
         layout="@layout/content_main" />
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_bar"
-        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:layout_gravity="bottom"
-        app:fabAlignmentMode="end"
-        app:fabAnimationMode="slide"
-        tools:ignore="BottomAppBar">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:id="@+id/hint_box"
-            android:text=""
-            android:textColor="@android:color/background_light"
-            android:theme="@style/FABTheme"/>
-    </com.google.android.material.bottomappbar.BottomAppBar>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/baseline_lightbulb_24"
-        app:layout_anchor="@id/bottom_bar"
-        app:layout_anchorGravity="center"
-        style="@style/FABTheme"/>
+    <include layout="@layout/main_include_bottom_bar_and_fab" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
