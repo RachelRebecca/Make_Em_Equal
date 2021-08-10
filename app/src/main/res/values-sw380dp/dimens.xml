@@ -17,6 +17,8 @@
 
     <dimen name="reset_button_text_size">30sp</dimen>
 
+
     <dimen name="button_margin_top_land">0dp</dimen>
     <dimen name="button_margin_bottom_land">60dp</dimen>
+
 </resources>

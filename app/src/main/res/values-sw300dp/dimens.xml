@@ -11,6 +11,9 @@
     <dimen name="button_top_margin">3dp</dimen>
     <dimen name="button_alt_side_margin">95dp</dimen>
 
+    <dimen name="button_margin_top_land">30dp</dimen>
+    <dimen name="button_margin_bottom_land">100dp</dimen>
+
     <string name="dp_level">sw300</string>
 
 </resources>
