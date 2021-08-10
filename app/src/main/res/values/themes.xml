@@ -39,4 +39,9 @@
         <item name="android:textAppearance">@color/secondaryTextColor</item>
         <item name="android:textSize">@dimen/fab_text_size</item>
     </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/toolbar_text_size</item>
+    </style>
+
 </resources>

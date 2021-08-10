@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="toolbar_text_size">50sp</dimen>
+    <dimen name="mtrl_toolbar_default_height">70dp</dimen>
+
     <dimen name="fab_text_size">30sp</dimen>
 
     <dimen name="text_size">50sp</dimen>
     <dimen name="text_view_ends">50dp</dimen>
+
+    <dimen name="answer_margins">45dp</dimen>
+
 
     <dimen name="button_text_size">60sp</dimen>
     <dimen name="reset_button_text_size">30sp</dimen>

@@ -1,4 +1,7 @@
 <resources>
+    <dimen name="toolbar_text_size">18sp</dimen>
+    <dimen name="mtrl_toolbar_default_height">56dp</dimen>
+
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fab_text_size">15sp</dimen>
 
