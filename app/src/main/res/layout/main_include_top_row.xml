@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/text_view_middle"
         android:layout_marginRight="@dimen/text_view_middle"
+        style="@style/TextFormat"
         android:text="@string/space" />
 
     <TextView
@@ -63,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/text_view_middle"
         android:layout_marginRight="@dimen/text_view_middle"
+        style="@style/TextFormat"
         android:text="@string/space" />
 
     <TextView
