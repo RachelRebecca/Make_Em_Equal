@@ -13,7 +13,6 @@ import static com.example.make_em_equal.Utils.showInfoDialog;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.example.make_em_equal.databinding.ActivityMainBinding;
@@ -25,7 +24,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.view.View;
 
@@ -34,7 +32,6 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
 {
